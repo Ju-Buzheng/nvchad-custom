@@ -9,7 +9,7 @@
 -- Powershell setting
 local isWindows = function () 
   local arch = os.getenv("os")
-  if string.match(arch, "Windows") then
+  if arch and string.match(arch, "Windows") then
     return true
   end
   return false
