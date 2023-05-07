@@ -6,6 +6,7 @@
 --   command = "tabdo wincmd =",
 -- })
 --
+
 -- Powershell setting
 local isWindows = function () 
   local arch = os.getenv("os")
@@ -26,3 +27,16 @@ if isWindows() then
   vim.o.shellxquote = nil
 end
 
+-- intent setting
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "lua",
+  callback = function ()
+    vim.opt.shiftwidth = 2
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+  end,
+})
