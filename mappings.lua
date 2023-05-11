@@ -19,7 +19,7 @@ M.dap = {
         local dapui = require("dapui")
         dapui.toggle()
       end,
-      "Open debugging sidebar"
+      "Toggle dapui"
     },
   }
 }
@@ -29,7 +29,19 @@ M.crates = {
     ["<leader>rcu"] = {
       function ()
         require("crates").upgrade_all_crates()
-      end
+      end,
+      "Update crates"
+    }
+  }
+}
+
+M["rust-tools"] = {
+  n = {
+    ["<leader>rp"] = {
+      function()
+        require("rust-tools").runnables.runnables()
+      end,
+      "RustRunables"
     }
   }
 }
