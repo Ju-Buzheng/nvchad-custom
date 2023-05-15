@@ -90,6 +90,15 @@ local plugins = {
       table.insert(M.sources, { name = "crates"} )
       return M
     end
+  },
+
+  -- markdown setup
+  {
+    "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    build = function ()
+      vim.fn["mkdp#util#install"]()
+    end
   }
 
   -- To make a plugin not be loaded
