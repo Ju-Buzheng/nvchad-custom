@@ -46,4 +46,15 @@ M["rust-tools"] = {
   }
 }
 
+M["makrdown-preview"] = {
+  n = {
+    ["<leader>mpt"] = {
+      function ()
+        vim.cmd("MarkdownPreviewToggle")
+      end
+    },
+    "MarkdownPreviewToggle"
+  }
+}
+
 return M

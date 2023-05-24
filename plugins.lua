@@ -98,6 +98,11 @@ local plugins = {
     ft = "markdown",
     build = function ()
       vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+        vim.g.mkdp_open_to_the_world = 1
+        vim.g.mkdp_open_ip = "0.0.0.0"
+        vim.g.mkdp_port = 8465
     end
   }
 
