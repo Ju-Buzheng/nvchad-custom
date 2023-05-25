@@ -51,9 +51,9 @@ M["makrdown-preview"] = {
     ["<leader>mpt"] = {
       function ()
         vim.cmd("MarkdownPreviewToggle")
-      end
+      end,
+      "MarkdownPreviewToggle"
     },
-    "MarkdownPreviewToggle"
   }
 }
 
