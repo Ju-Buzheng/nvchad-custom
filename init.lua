@@ -8,7 +8,7 @@
 --
 
 -- Powershell setting
-local isWindows = function () 
+local isWindows = function ()
   local arch = os.getenv("os")
   if arch and string.match(arch, "Windows") then
     return true
@@ -18,12 +18,12 @@ end
 
 if isWindows() then
   local cmd = "pwsh.exe"
-  local avaiable = vim.fn.executable(cmd) 
+  local avaiable = vim.fn.executable(cmd)
   vim.o.shell = avaiable and cmd or "powershell.exe"
   vim.o.shellcmdflag =  "-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues['Out-File:Encoding']='utf8';"
   vim.o.shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
   vim.o.shellpipe = '2>&1 | %%{ "$_" } | Tee-Object %s; exit $LastExitCode'
-  vim.o.shellquote = nil 
+  vim.o.shellquote = nil
   vim.o.shellxquote = nil
 end
 
