@@ -33,7 +33,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "lua",
+  pattern = "lua,yml,yaml",
   callback = function ()
     vim.bo.shiftwidth = 2
     vim.bo.tabstop = 2
