@@ -104,7 +104,16 @@ local plugins = {
         vim.g.mkdp_open_ip = "0.0.0.0"
         vim.g.mkdp_port = 8465
     end
-  }
+  },
+
+  -- search and replace
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = "nvim-lua/plenary.nvim",
+    config = function()
+      require("spectre").setup()
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {

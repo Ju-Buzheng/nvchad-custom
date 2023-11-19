@@ -57,4 +57,43 @@ M["makrdown-preview"] = {
   }
 }
 
+M['spectre'] = {
+  n = {
+    ["<leader>st"] = {
+      function()
+        require('spectre').toggle()
+      end,
+      "Toggle Spectre"
+    },
+    ["<leader>sw"] = {
+      function()
+        require("spectre").open_visual({
+          select_word = true
+        })
+      end,
+      "Search current word"
+    },
+    ["<leader>sp"] = {
+      function()
+        require('spectre').open_file_search({
+          select_word = true
+        })
+      end,
+      "Search on current file"
+    }
+  },
+  v = {
+    ["<leader>sw"] = {
+      function()
+        local esc = vim.api.nvim_replace_termcodes('<esc>', true, false, true)
+        vim.api.nvim_feedkeys(esc, 'x', false)
+        require('spectre').open_visual({
+          select_word = true
+        })
+      end,
+      "Search current word"
+    }
+  }
+}
+
 return M
