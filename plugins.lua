@@ -110,11 +110,37 @@ local plugins = {
   {
     "nvim-pack/nvim-spectre",
     dependencies = "nvim-lua/plenary.nvim",
-    config = function()
-      require("spectre").setup()
-    end,
   },
 
+  -- Comments
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
+
+  -- Windows
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = {
+      "WinNew"
+    }
+  }
+  -- Command line
+  -- {
+  --   "gelguy/wilder.nvim",
+  --   config = function (_, opts)
+  --     require('wilder').setup({
+  --       modes = { ':', '/', '?' }
+  --     })
+  --  end
+  -- }
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
